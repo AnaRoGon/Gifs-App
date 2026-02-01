@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# GifsApp - React (Giphy API)
+Este proyecto es una aplicación sencilla desarrollada con React para practicar la integración de APIs externas, el manejo de hooks, peticiones HTTP y la gestión del estado. 
+Forma parte del curso de React de Fernando Herrera.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El proyecto está disponible en la dirección: <https://buscador-de-gifs-anarogon.netlify.app/>
 
-Currently, two official plugins are available:
+# Características principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Búsqueda de GIFs: Interfaz para buscar contenido multimedia utilizando la API de Giphy.
 
-## React Compiler
+* Historial de búsquedas: Listado lateral que almacena las búsquedas recientes para un acceso rápido.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+* Validaciones: Control de duplicados y campos vacíos en el buscador.
 
-## Expanding the ESLint configuration
+* Pruebas unitarias: Implementación de tests básicos con Vitest y React Testing Library.
+  
+## Pantalla general de la aplicación
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Se trata de una aplicación sencilla que cuenta con una única pantalla desde donde se podrán buscar los gifs deseados desde una barra de búsqueda: 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![01](https://github.com/user-attachments/assets/89eb3bbc-3587-4a5c-ab93-b2e5b822ce6e)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tecnologías utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Para el desarrollo de esta aplicación se destaca: 
+* **React 19 & Vite**: entorno de desarrollo y librería principal. 
+* **TypeScript**: tipado estático para asegurar la integridad de los datos de la API.
+* **Tailwind CSS**: Para el estilizado de la interfaz.
+* **Vitest & Testing Library**: para el testing de componentes y hooks.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* ## ⚠️ ⚠️ Nota importante ⚠️ ⚠️:
+  
+Para que la aplicación funcione correctamente, es necesario configurar una API KEY de Giphy.
+Crea un archivo llamado `.env` en la raíz del proyecto.
+Añade la variable que encontarás en el archivo `.env.template`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+** Puedes obtener una clave gratuita registrándote en Giphy Developers:** <https://developers.giphy.com/>
+  
+## Levantar desarrollo
+1. Clonar el repositorio.
+   ```
+   git clone https://github.com/AnaRoGon/Gifs-App.git
+3. Editar el archivo `.en` añadiendo las variables de entorno que encontramos en `.env.template` y añadir nuestra propia API KEY. 
+5. Instalar las dependencias
+   ```
+   npm install   
+7. Lanzar el servidor de desarrollo.
+   ```
+   npm run dev
